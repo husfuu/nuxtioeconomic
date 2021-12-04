@@ -9,6 +9,8 @@ import { HotTable } from "@handsontable/vue";
 import { ContextMenu } from "handsontable/plugins/contextMenu";
 
 import "handsontable/dist/handsontable.full.css";
+import { registerAllModules } from 'handsontable/registry';
+registerAllModules();
 
 const tableset = require("../../data/tableset.json")
 export default {
@@ -27,7 +29,7 @@ export default {
                     refresh: {
                       name: "Resize columns",
                       callback: () => {
-                        console.log(this)
+                        refreshSize(this)
                       },
                     },
                     row_above: {},

@@ -10,6 +10,8 @@ import { ContextMenu } from "handsontable/plugins/contextMenu";
 import "handsontable/dist/handsontable.full.css";
 import { refreshSize, getTableData, loadData, downloadCSV } from "../../lib/helpers"
 import { getLeontiefInv, getGhoshianInv, getImpactAnalysis, getOutputMultiplier, getIncomeMultiplier, getEmploymentMultiplier, getInputOrSupplyMultiplier, } from "../../lib/matrix"
+import { registerAllModules } from 'handsontable/registry';
+registerAllModules();
 
 const tableset = require("../../data/tableset.json")
 export default {
