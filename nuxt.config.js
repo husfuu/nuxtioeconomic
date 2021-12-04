@@ -90,7 +90,7 @@ export default {
     },
     workbox: {
       /* workbox options */
-      dev: true,
+      dev: false,
       offlineStrategy: "StaleWhileRevalidate",
     },
   },

@@ -8,7 +8,7 @@
 import { HotTable } from "@handsontable/vue";
 import { ContextMenu } from "handsontable/plugins/contextMenu";
 import "handsontable/dist/handsontable.full.css";
-import { refreshSize, getTableData, loadData, downloadCSV } from "../../lib/helpers"
+import { refreshSize, getTableData, loadData, downloadCSV, findTable } from "../../lib/helpers"
 import { getLeontiefInv, getGhoshianInv, getImpactAnalysis, getOutputMultiplier, getIncomeMultiplier, getEmploymentMultiplier, getInputOrSupplyMultiplier, } from "../../lib/matrix"
 import { registerAllModules } from 'handsontable/registry';
 registerAllModules();
@@ -21,12 +21,12 @@ export default {
   },
   data() {
     return {
-        inputoutputtable :0,
-        scenariotable :1,
-        incometable :2,
-        employmenttable :3,
-        resulttable :4,
-        transactiontable :5,
+        inputoutputtable : "TableInputOutput",
+        scenariotable : "TableScenario",
+        incometable : "TableIncome",
+        employmenttable : "TableEmployment",
+        resulttable : "TableResult",
+        transactiontable : "TableTransaction",
         hotSettings: {
             startCols: 8,
             startRows: 8,
@@ -58,88 +58,88 @@ export default {
                             key: "basic:01",
                             name: "Leontief Inverse",
                             callback: () => {
-                                let transaction = getTableData(this, this.transactiontable);
-                                let inputoutput = getTableData(this, this.inputoutputtable)[0];
+                                let transaction = getTableData(findTable(this, this.transactiontable));
+                                let inputoutput = getTableData(findTable(this, this.inputoutputtable))[0];
                                 let result = getLeontiefInv(transaction, inputoutput)._data;
-                                loadData(this, this.resulttable, result);
+                                loadData(findTable(this, this.resulttable), result);
                             },
                         },
                         {
                             key: "basic:02",
                             name: "Ghosian Inverse",
                             callback: () => {
-                                let transaction = getTableData(this, this.transactiontable);
-                                let inputoutput = getTableData(this, this.inputoutputtable)[0];
+                                let transaction = getTableData(findTable(this, this.transactiontable));
+                                let inputoutput = getTableData(findTable(this, this.inputoutputtable))[0];
                                 let result = getGhoshianInv(transaction, inputoutput)._data;
-                                loadData(this, this.resulttable, result);
+                                loadData(findTable(this, this.resulttable), result);
                             },
                         },
                         {
                             key: "basic:03",
                             name: "Impact Analysis",
                             callback: () => {
-                                let transaction = getTableData(this, this.transactiontable);
-                                let inputoutput = getTableData(this, this.inputoutputtable)[0];
-                                let screnario = getTableData(this, this.scenariotable);
+                                let transaction = getTableData(findTable(this, this.transactiontable));
+                                let inputoutput = getTableData(findTable(this, this.inputoutputtable))[0];
+                                let scenario = getTableData(findTable(this, this.scenariotable));
                                 let result = getImpactAnalysis(
                                     transaction,
                                     inputoutput,
-                                    screnario
+                                    scenario
                                 );
-                                loadData(this, this.resulttable, result);
+                                loadData(findTable(this, this.resulttable), result);
                             },
                         },
                         {
                             key: "basic:04",
                             name: "Output Multiplier",
                             callback: () => {
-                                let transaction = getTableData(this, this.transactiontable);
-                                let inputoutput = getTableData(this, this.inputoutputtable)[0];
+                                let transaction = getTableData(findTable(this, this.transactiontable));
+                                let inputoutput = getTableData(findTable(this, this.inputoutputtable))[0];
                                 let result = getOutputMultiplier(transaction, inputoutput);
-                                loadData(this, this.resulttable, result);
+                                loadData(findTable(this, this.resulttable), result);
                             },
                         },
                         {
                             key: "basic:05",
                             name: "Income Multiplier",
                             callback: () => {
-                                let transaction = getTableData(this, this.transactiontable);
-                                let inputoutput = getTableData(this, this.inputoutputtable)[0];
-                                let income = getTableData(this, this.incometable)[0];
+                                let transaction = getTableData(findTable(this, this.transactiontable));
+                                let inputoutput = getTableData(findTable(this, this.inputoutputtable))[0];
+                                let income = getTableData(findTable(this, this.incometable))[0];
                                 let result = getIncomeMultiplier(
                                     transaction,
                                     inputoutput,
                                     income
                                 );
-                                loadData(this, this.resulttable, result);
+                                loadData(findTable(this, this.resulttable), result);
                             },
                         },
                         {
                             key: "basic:06",
                             name: "Employment Multiplier",
                             callback: () => {
-                                let transaction = getTableData(this, this.transactiontable);
-                                let inputoutput = getTableData(this, this.inputoutputtable)[0];
-                                let employment = getTableData(this, this.employmenttable)[0];
+                                let transaction = getTableData(findTable(this, this.transactiontable));
+                                let inputoutput = getTableData(findTable(this, this.inputoutputtable))[0];
+                                let employment = getTableData(findTable(this, this.employmenttable))[0];
                                 let result = getEmploymentMultiplier(
                                     transaction,
                                     inputoutput,
                                     employment
                                 );
-                                loadData(this, this.resulttable, result);
+                                loadData(findTable(this, this.resulttable), result);
                             },
                         },
                         {
                             key: "basic:07",
                             name: "Input or Supply Multiplier",
                             callback: () => {
-                                let transaction = getTableData(this, this.transactiontable);
-                                let inputoutput = getTableData(this, this.inputoutputtable)[0];
+                                let transaction = getTableData(findTable(this, this.transactiontable));
+                                let inputoutput = getTableData(findTable(this, this.inputoutputtable))[0];
                                 let result = getInputOrSupplyMultiplier(
                                     transaction,
                                     inputoutput
                                 );
-                                loadData(this, this.resulttable, result);
+                                loadData(findTable(this, this.resulttable), result);
                             },
                         },
                         ],
