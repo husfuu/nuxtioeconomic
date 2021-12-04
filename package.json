@@ -11,6 +11,7 @@
   },
   "dependencies": {
     "@handsontable/vue": "^11.0.1",
+    "@nuxtjs/workbox": "^3.0.0-beta.16",
     "core-js": "^3.15.1",
     "handsontable": "^11.0.1",
     "mathjs": "^10.0.0",
