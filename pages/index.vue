@@ -4,6 +4,6 @@
 
 <script>
 export default {
-  layout: "homeLayout"
+  layout: "homeLayout",
 }
 </script>

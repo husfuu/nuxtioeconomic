@@ -57,6 +57,21 @@ export default {
   // Build Configuration: https://go.nuxtjs.dev/config-build
   build: {},
 
+  manifest: {
+    name: "IO Economic",
+    lang: "en",
+    background_color: "#FFFFFF",
+    theme_color: "#F8F8F8",
+    theme_color: "#F8F8F8",
+    icons: [
+      {
+        src: "logo.jpeg",
+        size: "196x196",
+        type: "image/jpeg",
+      },
+    ],
+  },
+
   pwa: {
     meta: {
       title: "IO Economic",
@@ -69,7 +84,7 @@ export default {
       lang: "en",
     },
     icon: {
-      filename: "logo.jpeg",
+      filename: "icon.png",
       sizes: [64, 120, 144, 152, 192, 384, 512],
     },
   },
