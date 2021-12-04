@@ -1,0 +1,36 @@
+{
+  "name": "nuxtio",
+  "version": "1.0.0",
+  "private": true,
+  "scripts": {
+    "dev": "nuxt",
+    "build": "nuxt build",
+    "start": "nuxt start",
+    "generate": "nuxt generate",
+    "test": "jest"
+  },
+  "dependencies": {
+    "@handsontable/vue": "^11.0.1",
+    "core-js": "^3.15.1",
+    "handsontable": "^11.0.1",
+    "mathjs": "^10.0.0",
+    "nuxt": "^2.15.7"
+  },
+  "devDependencies": {
+    "@nuxtjs/pwa": "^3.3.5",
+    "@nuxtjs/tailwindcss": "^4.2.0",
+    "@vue/test-utils": "^1.2.1",
+    "babel-core": "7.0.0-bridge.0",
+    "babel-eslint": "^10.1.0",
+    "babel-jest": "^27.0.5",
+    "eslint": "^8.3.0",
+    "eslint-config-prettier": "^8.3.0",
+    "eslint-loader": "^4.0.2",
+    "eslint-plugin-prettier": "^4.0.0",
+    "eslint-plugin-vue": "^8.1.1",
+    "jest": "^27.0.5",
+    "postcss": "^8.3.5",
+    "prettier": "^2.5.0",
+    "vue-jest": "^3.0.4"
+  }
+}
