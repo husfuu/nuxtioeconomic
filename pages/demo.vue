@@ -86,10 +86,9 @@ export default {
         fileReader.onload = (event) => {
           let data = event.target.result;
           let workbook = xlsx.read(data, { type: "binary" });
-          workbook.SheetNames.forEach((sheet) => {
-            let rowObject = xlsx.utils.sheet_to_csv(workbook.Sheets[sheet]);
-            console.log(rowObject);
-          });
+          let firstSheet = workbook.Sheets[workbook.SheetNames[0]];
+          let result = xlsx.utils.sheet_to_json(firstSheet, { header: 1 });
+          console.log(result);
         };
       }
     },
