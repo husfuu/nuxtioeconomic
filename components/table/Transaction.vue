@@ -79,7 +79,6 @@ export default {
                       let transaction = numberValidation(
                         getTableData(findTable(this, this.transactiontable))
                       );
-                      console.log(this);
                       let inputoutput = numberValidation(
                         getTableData(findTable(this, this.inputoutputtable))
                       )[0];
@@ -304,7 +303,7 @@ export default {
             exportas_csv: {
               name: "Export as csv",
               callback: () => {
-                downloadCSV(transactionTable);
+                downloadCSV(findTable(this, this.resulttable));
               },
             },
             // exportas_txt: {

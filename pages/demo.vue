@@ -125,9 +125,9 @@ export default {
         let actualsize = size - 2;
 
         let transaction = [];
-        for (let i = 1; i < size + 1; i++) {
+        for (let i = 1; i < size - 1; i++) {
           let temp = [];
-          for (let j = 1; j < size + 1; j++) {
+          for (let j = 1; j < size - 1; j++) {
             temp.push(result[i][j]);
           }
           transaction.push(temp);
@@ -136,10 +136,11 @@ export default {
         refreshSize(findTableinLayout(this, this.transactiontable));
 
         let inputoutput = [];
-        for (let i = 1; i < size + 1; i++) {
+        for (let i = 1; i < size - 1; i++) {
           inputoutput.push(result[length - 1][i]);
         }
         loadData(findTableinLayout(this, this.inputoutputtable), [inputoutput]);
+        refreshSize(findTableinLayout(this, this.inputoutputtable));
 
         let finaldemand = [];
         for (let i = 1; i < actualsize + 1; i++) {
@@ -150,16 +151,18 @@ export default {
           finaldemand.push(temp);
         }
         loadData(findTableinLayout(this, this.scenariotable), finaldemand);
+        refreshSize(findTableinLayout(this, this.scenariotable));
 
         let income = [];
         for (let i = actualsize + 4; i < result.length - 4; i++) {
           let temp = [];
-          for (let j = 1; j < size + 1; j++) {
+          for (let j = 1; j < size - 1; j++) {
             temp.push(result[i][j]);
           }
           income.push(temp);
         }
         loadData(findTableinLayout(this, this.incometable), income);
+        refreshSize(findTableinLayout(this, this.incometable));
       };
     },
   },

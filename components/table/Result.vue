@@ -8,7 +8,7 @@
 import { HotTable } from "@handsontable/vue";
 import { ContextMenu } from "handsontable/plugins/contextMenu";
 import "handsontable/dist/handsontable.full.css";
-import { refreshSize, clearTable, downloadCSV } from "../../lib/helpers";
+import { refreshSize, findTable, downloadCSV } from "../../lib/helpers";
 import { registerAllModules } from "handsontable/registry";
 registerAllModules();
 
@@ -19,6 +19,7 @@ export default {
   },
   data() {
     return {
+      resulttable: "TableResult",
       hotSettings: {
         startCols: 8,
         startRows: 8,
@@ -47,7 +48,7 @@ export default {
             exportas_csv: {
               name: "Export as csv",
               callback: () => {
-                downloadCSV(inputOutputTable);
+                downloadCSV(findTable(this, this.resulttable));
               },
             },
             exportas_txt: {
