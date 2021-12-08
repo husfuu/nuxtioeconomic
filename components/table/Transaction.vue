@@ -86,10 +86,12 @@ export default {
                         transaction,
                         inputoutput
                       )._data;
-                      updatePattern(
-                        findTable(this, this.resulttable),
-                        "0,0.0000000000"
-                      );
+                      // updatePattern(findTable(this, this.resulttable), {
+                      //   type: "numeric",
+                      //   numericFormat: {
+                      //     pattern: "0,0.0000000000",
+                      //   },
+                      // });
                       loadData(findTable(this, this.resulttable), result);
                     },
                   },
@@ -107,10 +109,12 @@ export default {
                         transaction,
                         inputoutput
                       )._data;
-                      updatePattern(
-                        findTable(this, this.resulttable),
-                        "0,0.0000000000"
-                      );
+                      // updatePattern(findTable(this, this.resulttable), {
+                      //   type: "numeric",
+                      //   numericFormat: {
+                      //     pattern: "0,0.0000000000",
+                      //   },
+                      // });
                       loadData(findTable(this, this.resulttable), result);
                     },
                   },
@@ -132,10 +136,12 @@ export default {
                         inputoutput,
                         scenario
                       );
-                      updatePattern(
-                        findTable(this, this.resulttable),
-                        "0,0.00"
-                      );
+                      // updatePattern(findTable(this, this.resulttable), {
+                      //   type: "numeric",
+                      //   numericFormat: {
+                      //     pattern: "0,0.00",
+                      //   },
+                      // });
                       loadData(findTable(this, this.resulttable), result);
                     },
                   },
@@ -153,10 +159,12 @@ export default {
                         transaction,
                         inputoutput
                       );
-                      updatePattern(
-                        findTable(this, this.resulttable),
-                        "0,0.0000000000"
-                      );
+                      // updatePattern(findTable(this, this.resulttable), {
+                      //   type: "numeric",
+                      //   numericFormat: {
+                      //     pattern: "0,0.0000000000",
+                      //   },
+                      // });
                       loadData(findTable(this, this.resulttable), result);
                     },
                   },
@@ -180,10 +188,12 @@ export default {
                         inputoutput,
                         income
                       );
-                      updatePattern(
-                        findTable(this, this.resulttable),
-                        "0,0.0000000000"
-                      );
+                      // updatePattern(findTable(this, this.resulttable), {
+                      //   type: "numeric",
+                      //   numericFormat: {
+                      //     pattern: "0,0.0000000000",
+                      //   },
+                      // });
                       loadData(findTable(this, this.resulttable), result);
                     },
                   },
@@ -226,10 +236,13 @@ export default {
                         transaction,
                         inputoutput
                       );
-                      updatePattern(
-                        findTable(this, this.resulttable),
-                        "0,0.0000000000"
-                      );
+
+                      // updatePattern(findTable(this, this.resulttable), {
+                      //   type: "numeric",
+                      //   numericFormat: {
+                      //     pattern: "0,0.0000000000",
+                      //   },
+                      // });
                       loadData(findTable(this, this.resulttable), result);
                     },
                   },
@@ -251,6 +264,33 @@ export default {
                         getTableData(findTable(this, this.inputoutputtable))
                       )[0];
                       let result = getKeySector(transaction, inputoutput);
+
+                      // updatePattern(findTable(this, this.resulttable), {
+                      //   columns: [
+                      //     {
+                      //       data: "sectorforward",
+                      //       type: "text",
+                      //     },
+                      //     {
+                      //       data: "valueforward",
+                      //       type: "numeric",
+                      //       numericFormat: {
+                      //         pattern: "0,0.0000000000",
+                      //       },
+                      //     },
+                      //     {
+                      //       data: "sectorbackward",
+                      //       type: "text",
+                      //     },
+                      //     {
+                      //       data: "valuebackward",
+                      //       type: "numeric",
+                      //       numericFormat: {
+                      //         pattern: "0,0.0000000000",
+                      //       },
+                      //     },
+                      //   ],
+                      // });
                       loadData(findTable(this, this.resulttable), result);
                     },
                   },
