@@ -52,9 +52,9 @@ export default {
         contextMenu: {
           items: {
             refresh: {
-              name: "Resize columns",
+              name: "Refresh",
               callback: () => {
-                clearTable(this);
+                refreshSize(this);
               },
             },
             row_above: {},
@@ -79,6 +79,7 @@ export default {
                       let transaction = numberValidation(
                         getTableData(findTable(this, this.transactiontable))
                       );
+                      console.log(this);
                       let inputoutput = numberValidation(
                         getTableData(findTable(this, this.inputoutputtable))
                       )[0];

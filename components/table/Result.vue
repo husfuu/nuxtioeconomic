@@ -28,9 +28,9 @@ export default {
         contextMenu: {
           items: {
             refresh: {
-              name: "Resize columns",
+              name: "Refresh",
               callback: () => {
-                clearTable(this);
+                refreshSize(this);
               },
             },
             row_above: {},

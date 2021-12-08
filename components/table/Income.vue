@@ -25,7 +25,7 @@ export default {
         contextMenu: {
           items: {
             refresh: {
-              name: "Resize columns",
+              name: "Refresh",
               callback: () => {
                 refreshSize(this);
               },
