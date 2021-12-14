@@ -15,7 +15,8 @@
     "core-js": "^3.15.1",
     "handsontable": "^11.0.1",
     "mathjs": "^10.0.0",
-    "nuxt": "^2.15.7"
+    "nuxt": "^2.15.7",
+    "xlsx": "^0.17.4"
   },
   "devDependencies": {
     "@nuxtjs/pwa": "^3.3.5",
@@ -32,6 +33,7 @@
     "jest": "^27.0.5",
     "postcss": "^8.3.5",
     "prettier": "^2.5.0",
+    "sass-loader": "^12.3.0",
     "vue-jest": "^3.0.4"
   }
 }
